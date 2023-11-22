@@ -4,12 +4,7 @@ phases:
   build:
     commands:
       - echo "Building application..."
-      # Add any build commands necessary to create the files you want to zip
-
-      # Create a zip file (replace 'your-folder' with the actual folder name)
-      - cd $CODEBUILD_SRC_DIR
       - zip -j hello-python.zip python/*
       
 artifacts:
   files: hello-python.zip
-
