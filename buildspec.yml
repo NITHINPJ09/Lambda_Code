@@ -5,6 +5,7 @@ phases:
     commands:
       - zip -j hello-python.zip python/*
       - aws s3 cp hello-python.zip s3://npj-terraform-state/
+      - aws lambda update-function-code --function-name Test_Function --s3-bucket npj-terraform-state --s3-key hello-python.zip
       
 # artifacts:
 #   files: hello-python.zip
